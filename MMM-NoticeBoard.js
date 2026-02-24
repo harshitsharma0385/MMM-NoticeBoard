@@ -1,8 +1,8 @@
 Module.register("MMM-NoticeBoard", {
     defaults: {
         apiUrl: "https://notice-server-bxr9.onrender.com/api/notices",
-        updateInterval: 10000,
-        rotationInterval: 8000,
+        updateInterval: 60000,
+        rotationInterval: 10000,
         animationSpeed: 1000
     },
     start: function() {
@@ -62,9 +62,12 @@ Module.register("MMM-NoticeBoard", {
             <div class="notice-card">
                 <h2>${notice.title}</h2>
                 <p>${notice.description}</p>
-                <div class="expiry">Valid until: ${notice.expiry}</div>
+                
             </div>
         `;
         return wrapper;
     }
 });
+
+
+// <div class="expiry">Valid until: ${notice.expiry}</div>
