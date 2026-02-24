@@ -78,4 +78,4 @@ A Flask backend serving notices via API (optional: hosted on Render or local ser
 
 License
 
-MIT License © [Your Name]
+MIT License © Harshit Sharma
