@@ -2,7 +2,7 @@ Module.register("MMM-NoticeBoard", {
 
     defaults: {
         apiUrl: "https://notice-server-bxr9.onrender.com/api/notices",
-        updateInterval: 60000,
+        updateInterval: 5000,
         rotationInterval: 10000,
         animationSpeed: 1000
     },
@@ -103,7 +103,7 @@ Module.register("MMM-NoticeBoard", {
     if (notice.image_url && notice.image_url !== "") {
 
         const img = document.createElement("img");
-        img.src = notice.image_url;
+        img.src = notice.image_url + "?t=" + Date.now();
         img.className = "fullscreen-notice";
 
         wrapper.appendChild(img);

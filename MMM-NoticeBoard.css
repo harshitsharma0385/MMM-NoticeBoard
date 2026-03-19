@@ -1,4 +1,4 @@
-.MMM-NoticeBoard {
+/* .MMM-NoticeBoard {
     position: fixed;
     top: 0;
     left: 0;
@@ -9,7 +9,7 @@
     z-index: 9999;
 
     background: black;
-}
+} */
 
 /* .MMM-NoticeBoard .fullscreen-notice {
 
@@ -23,11 +23,45 @@
     object-fit: contain;
 } */
 
-.MMM-NoticeBoard img {
+/* .MMM-NoticeBoard img {
     /* width: 100vw;
     height: 100vh;
     object-fit: contain;
     background-color: black; */
+    /* max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    display: block; */
+/* } */
+
+
+/* MMM-NoticeBoard Fullscreen Module */
+
+.MMM-NoticeBoard {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+
+    z-index: 9999;
+}
+
+/* Notice Image */
+
+.MMM-NoticeBoard img {
     max-width: 100%;
     max-height: 100%;
 
