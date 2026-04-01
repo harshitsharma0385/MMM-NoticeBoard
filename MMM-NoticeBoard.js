@@ -11,7 +11,7 @@ Module.register("MMM-NoticeBoard", {
         this.notices = [];
         this.currentIndex = 0;
         this.loaded = false;
-        this.showingNotice = false;
+        
 
         this.getNotices();
         this.scheduledUpdate();
@@ -28,7 +28,7 @@ Module.register("MMM-NoticeBoard", {
                 this.currentIndex = 0;
 
                 this.updateDom(this.config.animationSpeed);
-
+                
             })
             .catch(error => {
                 console.error("Notice fetch Error:", error);
@@ -66,28 +66,15 @@ Module.register("MMM-NoticeBoard", {
             return;
         }
 
-        if (this.showingNotice) {
+        this.currentIndex++;
 
-            // Hide notice → show MagicMirror
-            this.hide();
-            this.showingNotice = false;
-
-        } else {
-
-            // Show notice
-            this.currentIndex++;
-
-            if (this.currentIndex >= this.notices.length) {
-                this.currentIndex = 0;
-            }
-
-            this.show();
-            this.updateDom(this.config.animationSpeed);
-            this.showingNotice = true;
+        if (this.currentIndex >= this.notices.length) {
+            this.currentIndex = 0;
         }
 
-    }, this.config.rotationInterval);
+        this.updateDom(this.config.animationSpeed);
 
+    }, this.config.rotationInterval);
 },
 
     getDom: function () {
@@ -103,7 +90,7 @@ Module.register("MMM-NoticeBoard", {
     if (notice.image_url && notice.image_url !== "") {
 
         const img = document.createElement("img");
-        img.src = notice.image_url + "?t=" + Date.now();
+        img.src = notice.image_url + "?v=" + Date.now();
         img.className = "fullscreen-notice";
 
         wrapper.appendChild(img);
